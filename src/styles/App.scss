@@ -1,0 +1,102 @@
+@mixin flex-render {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin component-container-style {
+  background: #d0d0d0;
+  padding: 1rem;
+  border: 1px solid silver;
+}
+
+.App {
+  text-align: center;
+
+  h3 {
+    border: 1px solid #bdbcbc;
+    border-left: 0;
+    border-right: 0;
+    padding: 0.5rem;
+    color: #505050;
+  }
+}
+
+.player__container {
+  height: 100%;
+  display: inline-block;
+  margin: 0.4rem;
+  border: 1px solid #bdb9b9;
+  padding: 1rem 1rem 0;
+  cursor: pointer;
+
+  &:hover {
+    background: silver;
+  }
+
+  & > a {
+    color: #3e3d3d;
+    text-decoration: none;
+  }
+}
+
+.image__container {
+  width: 12rem;
+  height: 10rem;
+  @include component-container-style;
+
+  & > img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+ul {
+  list-style: none;
+  @include flex-render;
+}
+
+li {
+
+  a {
+    color: #3e3d3d;
+    text-decoration: none;
+    background: #c1c1c1;
+    padding: 0.2rem 1rem;
+    border-radius: 12%;
+    font-size: 1.2rem;
+    transition: background 200ms;
+
+    &:hover {
+      background: #838383;
+    }
+  }
+}
+
+.player__info {
+  margin-bottom: 1rem;
+  & > p {
+    @include component-container-style;
+    margin-bottom: 0;
+  }
+}
+
+.player__page__info {
+  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+
+  & > span {
+    margin: 0.5rem 0;
+    & > img {
+      height: 1rem;
+      margin: 0 0.5rem;
+    }
+  }
+}
+
+.player__page {
+  @include component-container-style;
+  @include flex-render;
+  margin: 0 4rem;
+}
